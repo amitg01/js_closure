@@ -8,19 +8,54 @@ console.log(addTwo(3));
 console.log(addTwo(10));
 
 // Challenge 2
-function addS(word) {}
+function addS(word) {
+    return word+'s';
+}
 
 // uncomment these to check your work
-// console.log(addS('pizza'));
-// console.log(addS('bagel'));
+console.log(addS('pizza'));
+console.log(addS('bagel'));
 
 // Challenge 3
-function map(array, callback) {}
 
-// console.log(map([1, 2, 3], addTwo));
+function addTwo(arr){
+    var newArr = [];
+    for(let i=0; i<arr.length;i++){
+       newArr.push(arr[i]+2);
+    }
+    return newArr;
+}
+
+function multiplyByTwo(arr){
+    var newArr = [];
+    for(let i=0; i<arr.length;i++){
+       newArr.push(arr[i]*2);
+    }
+    return newArr; 
+}
+
+function map(array, callback) {
+  return callback(array);
+}
+
+console.log(map([1, 2, 3], addTwo));
+console.log(map([1, 2, 3],multiplyByTwo));
+
+
 
 // Challenge 4
-function forEach(array, callback) {}
+var newArr = [];
+function addOne(arr){
+    for(let i=0; i<arr.length;i++){
+        newArr.push(arr[i]+1);
+     }
+     return newArr; 
+}
+function forEach(array, callback) {
+callback(array);
+}
+forEach([1,2,3],addOne);
+console.log(newArr);
 
 // see for yourself if your forEach works!
 
