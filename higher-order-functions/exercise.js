@@ -93,13 +93,26 @@ function reduce(array, callback, initialValue) {
 var nums = [4, 1, 3];
 // reduce(nums, add, 0);
 
-console.log(reduce([1,2,3],add,0));
+console.log(reduce(nums,add,0));
 
 
 //Extension 3
-function intersection(arrays) {}
 
-// console.log(intersection([5, 10, 15, 20], [15, 88, 1, 5, 7], [1, 10, 15, 5, 20]));
+function intersection(...arrays) {
+    var intersectionArr=[];
+  arrays.reduce((a,b)=>{
+      a.forEach((elm)=>{
+          if(b.includes(elm) && !intersectionArr.includes(elm)){
+            intersectionArr.push(elm);
+          }
+      })
+  return intersectionArr;
+
+  })
+  return intersectionArr;
+}
+
+console.log(intersection([5, 10, 15, 20], [15, 88, 1, 5, 7], [1, 10, 15, 5, 20]));
 // should log: [5, 15]
 
 //Extension 4
