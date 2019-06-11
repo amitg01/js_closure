@@ -57,14 +57,25 @@ callback(array);
 forEach([1,2,3],addOne);
 console.log(newArr);
 
-// see for yourself if your forEach works!
+// see for yourself if your forEach works!`
 
 //--------------------------------------------------
 // Extension
 //--------------------------------------------------
 
 //Extension 1
-function mapWith(array, callback) {}
+function addOne(num){
+    return num+1;
+}
+function mapWith(array, callback){
+    var newArr = [];
+    array.forEach((i)=>{
+        newArr.push(callback(i))
+    })
+    return newArr;
+}
+
+console.log(mapWith([1, 2, 3], addOne));
 
 //Extension 2
 function reduce(array, callback, initialValue) {}
