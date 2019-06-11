@@ -78,7 +78,23 @@ function mapWith(array, callback){
 console.log(mapWith([1, 2, 3], addOne));
 
 //Extension 2
-function reduce(array, callback, initialValue) {}
+function add(a,b){
+    return a+b;
+}
+
+function reduce(array, callback, initialValue) {
+    var result = initialValue;
+    array.forEach((i)=>{
+       result = callback(i,result);
+    })
+    return result;
+}
+
+var nums = [4, 1, 3];
+// reduce(nums, add, 0);
+
+console.log(reduce([1,2,3],add,0));
+
 
 //Extension 3
 function intersection(arrays) {}
