@@ -116,9 +116,23 @@ console.log(intersection([5, 10, 15, 20], [15, 88, 1, 5, 7], [1, 10, 15, 5, 20])
 // should log: [5, 15]
 
 //Extension 4
-function union(arrays) {}
+function union(...arrays) {
+    var res =[];
+    arrays.reduce((a,b)=>{
+        console.log("a,b ",a,b);
+        
+        b.forEach((elm)=>{
+            if(!a.includes(elm)){
+                res.push(elm);
+                console.log(elm);
+            }
+        })
+        return res;
+    })
+    return res;
+}
 
-// console.log(union([5, 10, 15], [15, 88, 1, 5, 7], [100, 15, 10, 1, 5]));
+console.log(union([5, 10, 15], [15, 88, 1, 5, 7], [100, 15, 10, 1, 5]));
 // should log: [5, 10, 15, 88, 1, 7, 100]
 
 //Extension 5

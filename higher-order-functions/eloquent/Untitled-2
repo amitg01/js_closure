@@ -1,0 +1,16 @@
+function solution(str){
+  var newArr = [];
+   if(str.length%2!=0){
+     str=str+"_";
+   }
+   console.log(str);
+   for(let i=0;i<=str.length;i++){
+	console.log("len",str.length)
+	console.log("i",i);
+     newArr.push(str.substring(0,2));
+     str=str.substring(2);
+      console.log(str);
+   }
+	if(str.length<=2)  newArr.push(str.substring(0,2))
+   return newArr;
+}
